@@ -82,12 +82,6 @@ alle_paare = probe_daten.items()  # dict_items([('ID', 'XYZ-123'), ('Konzentrati
 for schlüssel, wert in probe_daten.items():
     print(f"{schlüssel}: {wert}")
 
-#   2.3 Mengen (set)
-#     - Ungeordnete Sammlung einzigartiger Elemente
-#     - Beispiel: Dubletten entfernen, Mengenoperationen
-#     - Funktionen: set(), len()
-#     - Methoden: .add(), .remove(), .union(), .intersection(), .difference()
-
 
 
 
