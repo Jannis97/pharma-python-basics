@@ -1,13 +1,47 @@
-i want that you create an new .py file that loads the first csv and prcocesses it.
-In the file is an noisy chromatography data.  multiple differed with peaks.
+Python-Skript für Chromatographiedaten-Analyse
+Erstelle eine Python-Datei, die:
 
-Load the data same like befor.  use the savitzky golay filter with = 11 for smoothing the data. Find the largest k = 17 peaks.
+Die erste CSV-Datei mit verrauschten Chromatographiedaten lädt und verarbeitet
+Vorverarbeitung:
 
-use the maxima and fit 12 gaussians so that the sum of gaussians is similar to the processed data.
+Daten wie zuvor laden
+Savitzky-Golay-Filter mit Fensterbreite = 11 zur Glättung anwenden
+Die 17 größten Peaks identifizieren
 
-Create an subplots, with original,  with filtered data with peaks marked, and the fittet gaussians and ther sum.
-First create an optimized promt, and then all code in one, do not use parse args
 
-Create an second subplots for the individual gaussians and the sum of gaussians.Save both plots as png files.
+Modellierung:
 
-Do not correct the baseline do all in one
+Die 17 gefundenen Maxima verwenden
+17 Gaußkurven anpassen
+Die Summe der Abweichungsquadrate zum vorverarbeiteten Signal minimieren
+
+
+Grafik 1:
+
+Subplots erstellen mit:
+
+Originaldaten
+Gefilterte Daten mit markierten Peaks
+Angepasste Gaußkurven
+Summe der Gaußkurven im Vergleich zu gefilterten Daten
+
+
+Als PNG-Datei speichern
+
+
+Grafik 2:
+
+Subplots erstellen mit:
+
+Einzelne 17 Gaußkurven
+Summe aller Gaußkurven
+
+
+Als PNG-Datei speichern
+
+
+Technische Anforderungen:
+
+Keine Baseline-Korrektur durchführen
+Alles in einer Datei implementieren
+Keine parse_args verwenden
