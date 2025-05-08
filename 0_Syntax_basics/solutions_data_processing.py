@@ -222,46 +222,40 @@ def aufgabe5(alle_x, alle_y, titel="Alle Datensätze"):
     print(f"Plot '{titel}' mit {len(alle_x)} Datensätzen erstellt und angezeigt.")
 
 
-# Hauptfunktion zum Testen aller Aufgaben
-def main():
-    """Testet alle implementierten Aufgaben nacheinander."""
-    print("Aufgabe 0: CSV-Dateien im Verzeichnis auflisten")
-    verzeichnis = '/home/wowra/repos/pharma-python-basics/simulated_data/data'  # Passe den Pfad an deine Umgebung an
-    csv_liste = aufgabe0()
-    print(f"Gefundene CSV-Dateien: {csv_liste}")
-    
-    if not csv_liste:
-        print("Keine CSV-Dateien gefunden. Beende Programm.")
-        return
-    
-    print("\nAufgabe 1: Vollständigen Pfad erstellen")
-    dateipfad = aufgabe1(csv_liste, verzeichnis)
-    print(f"Pfad zur ersten Datei: {dateipfad}")
-    
-    print("\nAufgabe 2: CSV-Datei öffnen und x, y auslesen")
-    x, y = aufgabe2(dateipfad)
-    if x is not None and y is not None:
-        print(f"Erste 5 x-Werte: {x[:5].values}")
-        print(f"Erste 5 y-Werte: {y[:5].values}")
-    
-    print("\nAufgabe 3: Plotten des ersten Datensatzes")
-    aufgabe3(x, y, f"Datensatz aus {csv_liste[0]}")
-    
-    print("\nAufgabe 4: Alle x-Werte laden")
-    alle_x = aufgabe4(verzeichnis, csv_liste)
-    print(f"Anzahl geladener Datensätze: {len(alle_x)}")
-    
-    print("\nAufgabe 5: Alle Datensätze plotten")
-    # Lade alle y-Werte
-    alle_y = []
-    for datei in csv_liste:
-        pfad = os.path.join(verzeichnis, datei)
-        _, y_values = aufgabe2(pfad)
-        alle_y.append(y_values)
-    
-    aufgabe5(alle_x, alle_y, "Alle Datensätze im Vergleich")
-    print("Alle Aufgaben wurden ausgeführt!")
+"""Testet alle implementierten Aufgaben nacheinander."""
+print("Aufgabe 0: CSV-Dateien im Verzeichnis auflisten")
+verzeichnis = '/home/wowra/repos/pharma-python-basics/simulated_data/data'  # Passe den Pfad an deine Umgebung an
+csv_liste = aufgabe0()
+print(f"Gefundene CSV-Dateien: {csv_liste}")
+
+if not csv_liste:
+    print("Keine CSV-Dateien gefunden. Beende Programm. Passe den Pfad an.")
 
 
-if __name__ == "__main__":
-    main()
+print("\nAufgabe 1: Vollständigen Pfad erstellen")
+dateipfad = aufgabe1(csv_liste, verzeichnis)
+print(f"Pfad zur ersten Datei: {dateipfad}")
+
+print("\nAufgabe 2: CSV-Datei öffnen und x, y auslesen")
+x, y = aufgabe2(dateipfad)
+if x is not None and y is not None:
+    print(f"Erste 5 x-Werte: {x[:5].values}")
+    print(f"Erste 5 y-Werte: {y[:5].values}")
+
+print("\nAufgabe 3: Plotten des ersten Datensatzes")
+aufgabe3(x, y, f"Datensatz aus {csv_liste[0]}")
+
+print("\nAufgabe 4: Alle x-Werte laden")
+alle_x = aufgabe4(verzeichnis, csv_liste)
+print(f"Anzahl geladener Datensätze: {len(alle_x)}")
+
+print("\nAufgabe 5: Alle Datensätze plotten")
+# Lade alle y-Werte
+alle_y = []
+for datei in csv_liste:
+    pfad = os.path.join(verzeichnis, datei)
+    _, y_values = aufgabe2(pfad)
+    alle_y.append(y_values)
+
+aufgabe5(alle_x, alle_y, "Alle Datensätze im Vergleich")
+print("Alle Aufgaben wurden ausgeführt!")
