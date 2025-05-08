@@ -1,0 +1,13 @@
+i want that you create an new .py file that loads the first csv and prcocesses it.
+In the file is an noisy chromatography data.  multiple differed with peaks.
+
+Load the data same like befor.  use the savitzky golay filter with = 11 for smoothing the data. Find the largest k = 17 peaks.
+
+use the maxima and fit 12 gaussians so that the sum of gaussians is similar to the processed data.
+
+Create an subplots, with original,  with filtered data with peaks marked, and the fittet gaussians and ther sum.
+First create an optimized promt, and then all code in one, do not use parse args
+
+Create an second subplots for the individual gaussians and the sum of gaussians.Save both plots as png files.
+
+Do not correct the baseline do all in one

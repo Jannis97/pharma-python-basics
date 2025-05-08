@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
 
 # === Einstellungen ===
-csv_path = ''
+csv_path = '/home/jannis/repos/pharma-python-basics/simulated_data/data/chromatogram-01.csv'
 window_length = 11  # ungerade Zahl > polyorder
 polyorder = 3        # Grad des Polynoms
 # ======================
